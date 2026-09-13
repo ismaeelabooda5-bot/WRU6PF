@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="خدمة تنظيف خزانات احترافية في المنطقة الشرقية والأحساء" />
+  <meta name="theme-color" content="#087f86" />
+  <title>نقاء الخزان | تنظيف خزانات بالأحساء</title>
+  <style>
+    :root {
+      --ink: #123c43;
+      --muted: #6b8589;
+      --teal: #087f86;
+      --deep: #07545f;
+      --mint: #e8faf6;
+      --cream: #fffaf2;
+      --orange: #f5a04d;
+      --white: #fff;
+      --line: rgba(8, 127, 134, .14);
+      --shadow: 0 20px 55px rgba(7, 84, 95, .12);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(232, 250, 246, .92), transparent 29rem),
+        radial-gradient(circle at 90% 35%, rgba(255, 250, 242, .98), transparent 24rem),
+        #f8fcfb;
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: min(100% - 32px, 1080px);
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 13px 0;
+      background: rgba(248, 252, 251, .88);
+      border-bottom: 1px solid rgba(8, 127, 134, .08);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--deep);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      position: relative;
+      display: grid;
+      width: 43px;
+      height: 43px;
+      overflow: hidden;
+      color: var(--white);
+      background: linear-gradient(145deg, #2cc9c1, var(--teal));
+      border: 4px solid var(--white);
+      border-radius: 15px 15px 15px 4px;
+      box-shadow: 0 8px 17px rgba(8, 127, 134, .22);
+      place-items: center;
+      font-size: 1.35rem;
+      transform: rotate(-4deg);
+    }
+
+    .brand-mark::after {
+      position: absolute;
+      right: -8px;
+      bottom: -8px;
+      width: 22px;
+      height: 22px;
+      border: 3px solid rgba(255, 255, 255, .45);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 700;
+    }
+
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--teal); outline: none; }
+
+    .nav-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 14px;
+      color: var(--white);
+      background: var(--teal);
+      border-radius: 12px;
+      font-size: .83rem;
+      font-weight: 800;
+      box-shadow: 0 7px 18px rgba(8, 127, 134, .18);
+    }
+
+    .nav-call:hover, .nav-call:focus-visible { background: var(--deep); outline: none; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: clamp(24px, 5vw, 72px);
+      min-height: 610px;
+      padding: 62px 0 45px;
+      text-align: center;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      color: var(--teal);
+      background: var(--mint);
+      border: 1px solid rgba(8, 127, 134, .1);
+      border-radius: 99px;
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+      border-radius: 50%;
+      content: "";
+      box-shadow: 0 0 0 5px rgba(245, 160, 77, .14);
+    }
+
+    h1 {
+      max-width: 590px;
+      margin: 19px 0 12px;
+      color: var(--deep);
+      font-size: clamp(2.5rem, 5.5vw, 4.65rem);
+      line-height: 1.12;
+      letter-spacing: -2.3px;
+    }
+
+    .hero-copy > p {
+      max-width: 510px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .hero-location {
+      margin: 15px 0 0;
+      color: var(--teal);
+      font-size: .92rem;
+      font-weight: 800;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 11px;
+      margin-top: 27px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 52px;
+      padding: 12px 21px;
+      border-radius: 15px;
+      font-weight: 800;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+
+    .button:hover, .button:focus-visible {
+      transform: translateY(-3px);
+      outline: none;
+    }
+
+    .button-main {
+      color: var(--white);
+      background: var(--teal);
+      box-shadow: 0 12px 23px rgba(8, 127, 134, .23);
+    }
+
+    .button-main:hover, .button-main:focus-visible { background: var(--deep); }
+
+    .button-light { color: #16866f; background: #e5f8ef; }
+    .button-light:hover, .button-light:focus-visible { background: #d3f0e4; }
+
+    .hero-phone {
+      display: block;
+      margin-top: 13px;
+      color: var(--deep);
+      font-size: 1.13rem;
+      font-weight: 800;
+      direction: ltr;
+    }
+
+    .hero-visual {
+      position: relative;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 12px;
+    }
+
+    .hero-visual::before {
+      position: absolute;
+      top: -15px;
+      right: -5px;
+      width: 125px;
+      height: 125px;
+      border: 2px dashed rgba(245, 160, 77, .46);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .hero-visual::after {
+      position: absolute;
+      bottom: -18px;
+      left: -7px;
+      width: 95px;
+      height: 95px;
+      background: var(--mint);
+      border-radius: 50%;
+      content: "";
+      z-index: -1;
+    }
+
+    .hero-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / .93;
+      overflow: hidden;
+      border: 9px solid var(--white);
+      border-radius: 38px 38px 38px 7px;
+      box-shadow: var(--shadow);
+      background: linear-gradient(135deg, #d9f4ef, #0d7983);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.92);
+    }
+
+    .image-tag {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      color: var(--deep);
+      background: rgba(255, 255, 255, .94);
+      border-radius: 13px;
+      box-shadow: 0 9px 24px rgba(7, 84, 95, .18);
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .image-tag::before {
+      width: 9px;
+      height: 9px;
+      background: #38b887;
+      border-radius: 50%;
+      content: "";
+    }
+
+    .quick-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      width: min(100%, 500px);
+      margin-top: 26px;
+    }
+
+    .quick-point {
+      padding: 10px 7px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: .78rem;
+    }
+
+    .quick-point strong {
+      display: block;
+      color: var(--teal);
+      font-size: 1.2rem;
+    }
+
+    .section {
+      padding: 76px 0;
+      text-align: center;
+    }
+
+    .section-soft {
+      background: rgba(232, 250, 246, .45);
+      border-block: 1px solid rgba(8, 127, 134, .06);
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin: 0 auto 34px;
+    }
+
+    .section-kicker {
+      color: var(--orange);
+      font-size: .79rem;
+      font-weight: 900;
+      letter-spacing: .5px;
+    }
+
+    h2 {
+      margin: 7px 0 8px;
+      color: var(--deep);
+      font-size: clamp(1.8rem, 4vw, 2.65rem);
+      line-height: 1.25;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
+
+    .service-card {
+      padding: 26px 19px;
+      background: var(--white);
+      border: 1px solid rgba(8, 127, 134, .09);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 28px rgba(7, 84, 95, .055);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 35px rgba(7, 84, 95, .12);
+    }
+
+    .service-icon {
+      display: grid;
+      width: 57px;
+      height: 57px;
+      margin: 0 auto 14px;
+      color: var(--teal);
+      background: var(--mint);
+      border-radius: 18px;
+      place-items: center;
+      font-size: 1.65rem;
+    }
+
+    .service-card h3 { margin: 0 0 6px; color: var(--deep); font-size: 1.05rem; }
+    .service-card p { margin: 0; color: var(--muted); font-size: .86rem; }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 48px;
+      text-align: right;
+    }
+
+    .about-layout .section-heading {
+      margin: 0;
+      text-align: right;
+    }
+
+    .about-copy {
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .about-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .about-list li::before {
+      display: grid;
+      width: 23px;
+      height: 23px;
+      flex: 0 0 23px;
+      color: var(--white);
+      background: var(--teal);
+      border-radius: 50%;
+      content: "✓";
+      place-items: center;
+      font-size: .73rem;
+    }
+
+    .about-card {
+      position: relative;
+      padding: 35px 24px;
+      overflow: hidden;
+      color: var(--white);
+      background: linear-gradient(145deg, var(--deep), var(--teal));
+      border-radius: 30px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .about-card::before {
+      position: absolute;
+      top: -64px;
+      left: -35px;
+      width: 170px;
+      height: 170px;
+      border: 1px solid rgba(255, 255, 255, .19);
+      border-radius: 50%;
+      box-shadow: 0 0 0 25px rgba(255, 255, 255, .04), 0 0 0 50px rgba(255, 255, 255, .04);
+      content: "";
+    }
+
+    .about-number {
+      position: relative;
+      margin: 0;
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .about-card p { position: relative; margin: 12px auto 0; max-width: 280px; color: rgba(255, 255, 255, .8); font-size: .92rem; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .review {
+      padding: 23px 20px;
+      background: var(--white);
+      border: 1px solid rgba(8, 127, 134, .09);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 28px rgba(7, 84, 95, .05);
+      text-align: right;
+    }
+
+    .stars {
+      color: var(--orange);
+      letter-spacing: 2px;
+      font-size: 1rem;
+    }
+
+    .review p {
+      min-height: 88px;
+      margin: 12px 0 16px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--deep);
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    .reviewer-icon {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      color: var(--teal);
+      background: var(--mint);
+      border-radius: 50%;
+      place-items: center;
+    }
+
+    .contact-box {
+      padding: 45px 25px;
+      color: var(--white);
+      background: linear-gradient(145deg, var(--teal), var(--deep));
+      border-radius: 30px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box h2 { color: var(--white); }
+    .contact-box p { margin: 0 auto 22px; color: rgba(255, 255, 255, .82); }
+    .contact-box .button-main { color: var(--deep); background: var(--white); box-shadow: none; }
+    .contact-box .button-main:hover, .contact-box .button-main:focus-visible { background: var(--cream); }
+
+    .floating-actions {
+      position: fixed;
+      right: 18px;
+      bottom: 19px;
+      z-index: 20;
+      display: grid;
+      gap: 12px;
+    }
+
+    .float-button {
+      position: relative;
+      display: grid;
+      width: 58px;
+      height: 58px;
+      color: var(--white);
+      border: 3px solid var(--white);
+      border-radius: 50%;
+      box-shadow: 0 8px 22px rgba(7, 84, 95, .24);
+      place-items: center;
+      font-size: 1.35rem;
+      transition: transform .2s ease;
+      animation: float-in .7s ease both;
+    }
+
+    .float-button:hover, .float-button:focus-visible { transform: scale(1.09); outline: none; }
+    .float-call { background: var(--teal); animation-delay: .1s; }
+    .float-whatsapp { background: #20b975; animation-delay: .2s; }
+
+    .float-button::after {
+      position: absolute;
+      inset: -6px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      content: "";
+      opacity: .32;
+      animation: pulse 2.2s infinite;
+    }
+
+    .float-label {
+      position: absolute;
+      right: 68px;
+      padding: 5px 10px;
+      color: var(--deep);
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 5px 16px rgba(7, 84, 95, .13);
+      font-size: .72rem;
+      font-weight: 800;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(5px);
+      transition: opacity .2s ease, transform .2s ease;
+      pointer-events: none;
+    }
+
+    .float-button:hover .float-label, .float-button:focus-visible .float-label { opacity: 1; transform: translateX(0); }
+
+    footer {
+      padding: 28px 0 38px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: .78rem;
+      text-align: center;
+    }
+
+    footer p { margin: 4px 0; }
+    footer a { color: var(--teal); font-weight: 800; }
+    footer a:hover, footer a:focus-visible { color: var(--orange); outline: none; }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: .3; }
+      55% { transform: scale(1.18); opacity: 0; }
+    }
+
+    @keyframes float-in {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 800px) {
+      .container { width: min(100% - 26px, 620px); }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 36px; padding: 43px 0 34px; }
+      .hero-visual { order: -1; max-width: 520px; }
+      .hero-image { aspect-ratio: 1.13 / 1; }
+      .section { padding: 58px 0; }
+      .services-grid, .reviews-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 23px 20px; }
+      .review p { min-height: 0; }
+      .about-layout { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+      .about-layout .section-heading { text-align: center; }
+      .about-list { width: fit-content; margin-inline: auto; text-align: right; }
+      .floating-actions { right: 13px; bottom: 13px; }
+      .float-button { width: 54px; height: 54px; }
+    }
+
+    @media (max-width: 440px) {
+      .container { width: min(100% - 20px, 390px); }
+      .topbar { padding: 9px 0; }
+      .brand { font-size: .85rem; }
+      .brand-mark { width: 38px; height: 38px; font-size: 1.15rem; }
+      .nav-call { padding: 8px 10px; font-size: .74rem; }
+      .hero { min-height: auto; padding-top: 34px; }
+      h1 { font-size: clamp(2.35rem, 13vw, 3.6rem); }
+      .hero-copy > p { font-size: .94rem; }
+      .hero-actions { width: 100%; flex-direction: column; }
+      .button { width: 100%; }
+      .quick-points { gap: 4px; }
+      .quick-point { font-size: .7rem; }
+      .hero-visual { padding: 5px; }
+      .hero-image { border-width: 6px; border-radius: 28px 28px 28px 6px; }
+      .section-heading { margin-bottom: 26px; }
+      .contact-box { padding: 36px 18px; }
+      .float-label { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#الرئيسية" aria-label="العودة إلى الرئيسية">
+        <span class="brand-mark" aria-hidden="true">⌁</span>
+        <span>نقاء الخزان</span>
+      </a>
+      <nav class="nav-links" aria-label="التنقل الرئيسي">
+        <a href="#الرئيسية">الرئيسية</a>
+        <a href="#خدماتنا">خدماتنا</a>
+        <a href="#من-نحن">من نحن</a>
+        <a href="#التقييمات">التقييمات</a>
+      </nav>
+      <a class="nav-call" href="tel:+966504499343"><span aria-hidden="true">☎</span> اتصل الآن</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="الرئيسية">
+      <div class="hero-copy">
+        <span class="eyebrow">نظافة موثوقة • راحة بال أكبر</span>
+        <h1>تنظيف خزانات<br />باحترافية وعناية</h1>
+        <p>نساعدك في الحفاظ على خزان أنظف وماء أفضل بخدمة منظمة واهتمام حقيقي بالتفاصيل.</p>
+        <p class="hero-location">📍 المنطقة الشرقية — الأحساء</p>
+        <div class="hero-actions">
+          <a class="button button-main" href="tel:+966504499343"><span aria-hidden="true">☎</span> اتصل الآن</a>
+          <a class="button button-light" href="https://wa.me/201029095046" target="_blank" rel="noopener"><span aria-hidden="true">◉</span> راسلنا واتساب</a>
+        </div>
+        <a class="hero-phone" href="tel:+966504499343" dir="ltr">050 449 9343</a>
+        <div class="quick-points" aria-label="مميزات سريعة">
+          <div class="quick-point"><strong>✓</strong>خدمة دقيقة</div>
+          <div class="quick-point"><strong>✓</strong>اهتمام بالتفاصيل</div>
+          <div class="quick-point"><strong>✓</strong>موعد مناسب</div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="فريق يعمل في مجال التنظيف" width="1000" height="885" loading="eager" fetchpriority="high" decoding="async" />
+          <span class="image-tag">فريق جاهز لخدمتك</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="خدماتنا">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">ماذا نقدم؟</span>
+          <h2>خدماتنا مصممة لنظافة أفضل</h2>
+          <p>حلول عملية وواضحة تساعدك على الاهتمام بخزانك دون تعقيد.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◌</div>
+            <h3>تنظيف الخزانات</h3>
+            <p>تنظيف شامل للخزان بعناية للوصول إلى نتيجة مريحة ونظافة واضحة.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">✦</div>
+            <h3>عناية بالتفاصيل</h3>
+            <p>نهتم بكل جزء من الخدمة ونحافظ على ترتيب المكان بعد الانتهاء.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">⌁</div>
+            <h3>خدمة في الأحساء</h3>
+            <p>نخدم المنطقة الشرقية والأحساء بترتيب واضح وتواصل مباشر.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="من-نحن">
+      <div class="container about-layout">
+        <div>
+          <div class="section-heading">
+            <span class="section-kicker">من نحن</span>
+            <h2>نخلي الخدمة أسهل عليك</h2>
+          </div>
+          <p class="about-copy">نؤمن أن الخدمة الجيدة تبدأ من الالتزام بالموعد وتنتهي بمكان مرتب ونتيجة ترضيك. لذلك نعمل بتركيز ووضوح من أول تواصل حتى اكتمال الخدمة.</p>
+          <ul class="about-list">
+            <li>تواصل مباشر وسريع</li>
+            <li>اهتمام بنظافة المكان</li>
+            <li>خدمة مناسبة للبيوت والمنشآت</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <p class="about-number">100%</p>
+          <p>اهتمام بجودة الخدمة ورضا العميل في كل زيارة</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="التقييمات">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">آراء العملاء</span>
+          <h2>تجارب تخلّي الاختيار أسهل</h2>
+          <p>بعض الكلمات التي تعبّر عن تجربة العملاء مع الخدمة.</p>
+        </div>
+        <div class="reviews-grid">
+          <article class="review">
+            <div class="stars" aria-label="5 من 5 نجوم">★★★★★</div>
+            <p>“الخدمة كانت مرتبة وسريعة، والتواصل ممتاز من أول المكالمة إلى نهاية العمل. النتيجة فرقت معنا جدًا.”</p>
+            <div class="reviewer"><span class="reviewer-icon" aria-hidden="true">م</span> محمد — الأحساء</div>
+          </article>
+          <article class="review">
+            <div class="stars" aria-label="5 من 5 نجوم">★★★★★</div>
+            <p>“فريق محترم وتعامل راقٍ، اهتموا بالمكان بعد التنظيف وتركو كل شيء مرتب. تجربة مريحة وأنصح بهم.”</p>
+            <div class="reviewer"><span class="reviewer-icon" aria-hidden="true">س</span> سارة — المنطقة الشرقية</div>
+          </article>
+          <article class="review">
+            <div class="stars" aria-label="5 من 5 نجوم">★★★★★</div>
+            <p>“حجز الموعد كان سهلًا، ووصلوا في الوقت واتعاملوا باحتراف. أكيد هتكون الخدمة المفضلة عندنا.”</p>
+            <div class="reviewer"><span class="reviewer-icon" aria-hidden="true">ع</span> عبدالله — الأحساء</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-box">
+          <span class="section-kicker">جاهزين لخدمتك</span>
+          <h2>خزان أنظف يبدأ بمكالمة</h2>
+          <p>تواصل معنا الآن واحجز الخدمة بالطريقة التي تناسبك.</p>
+          <a class="button button-main" href="tel:+966504499343"><span aria-hidden="true">☎</span> اتصل الآن</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-actions" aria-label="طرق التواصل السريعة">
+    <a class="float-button float-call" href="tel:+966504499343" aria-label="اتصال مباشر">
+      <span aria-hidden="true">☎</span><span class="float-label">اتصال مباشر</span>
+    </a>
+    <a class="float-button float-whatsapp" href="https://wa.me/201029095046" target="_blank" rel="noopener" aria-label="واتساب">
+      <span aria-hidden="true">◉</span><span class="float-label">واتساب</span>
+    </a>
+  </div>
+
+  <footer class="container">
+    <p>تم التصميم بواسطة <a href="https://wa.me/201029095046" target="_blank" rel="noopener">م. نجوى إبراهيم</a></p>
+    <p>© <span id="year">2026</span> — جميع الحقوق محفوظة</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
